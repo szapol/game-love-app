@@ -15,7 +15,8 @@ class PlayerSeeder extends Seeder
     {
         Game::factory()
             ->has(Player::factory(rand(1, 3))
-                ->has(Game::factory(rand(1, 3))))
+                ->has(Game::factory(rand(1, 3)), 'lovedGames'),
+                'lovedByPlayers')
             ->count(10)
             ->create();
     }
